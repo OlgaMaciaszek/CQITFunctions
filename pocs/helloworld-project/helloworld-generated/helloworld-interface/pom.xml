@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>nl.cqit.function.poc.java</groupId>
+        <groupId>nl.cqit.function.poc.java.helloworld</groupId>
         <artifactId>helloworld-generated</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
@@ -13,7 +13,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>nl.cqit.function.poc.java</groupId>
+            <groupId>nl.cqit.function.poc.java.helloworld</groupId>
             <artifactId>helloworld-openapi</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -109,16 +109,16 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <groupId>nl.cqit.function.poc.java.api</groupId>
+                            <groupId>nl.cqit.function.poc.java.helloworld.api</groupId>
                             <artifactId>helloworld-interface-generated</artifactId>
                             <artifactVersion>${project.version}</artifactVersion>
 
                             <generatorName>spring</generatorName>
                             <inputSpec>${project.build.directory}/openapi-resources/openapi/openapi.yaml</inputSpec>
 
-                            <packageName>nl.cqit.function.poc.java</packageName>
-                            <apiPackage>nl.cqit.function.poc.java.api</apiPackage>
-                            <modelPackage>nl.cqit.function.poc.java.api.model</modelPackage>
+                            <packageName>nl.cqit.function.poc.java.helloworld</packageName>
+                            <apiPackage>nl.cqit.function.poc.java.helloworld.api</apiPackage>
+                            <modelPackage>nl.cqit.function.poc.java.helloworld.api.model</modelPackage>
 
 <!--                            <verbose>true</verbose>-->
 

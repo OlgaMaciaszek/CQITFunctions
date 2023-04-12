@@ -1,4 +1,4 @@
-package nl.cqit.function.poc.java;
+package nl.cqit.function.poc.java.helloworld;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

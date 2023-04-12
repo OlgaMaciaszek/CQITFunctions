@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>nl.cqit.function.poc.java</groupId>
+    <groupId>nl.cqit.function.poc.java.helloworld</groupId>
     <artifactId>helloworld-project</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
@@ -17,7 +17,7 @@
 
         <function.name>helloworld</function.name>
         <function.longname>Hello World</function.longname>
-        <function.groupId>nl.cqit.function.poc.java</function.groupId>
+        <function.groupId>nl.cqit.function.poc.java.helloworld</function.groupId>
         <function.artifactId>${function.name}-function</function.artifactId>
         <function.interfaceArtifactId>${function.name}-interface</function.interfaceArtifactId>
         <function.apiPackage>${function.groupId}.api</function.apiPackage>

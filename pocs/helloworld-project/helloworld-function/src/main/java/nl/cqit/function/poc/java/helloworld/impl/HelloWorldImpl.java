@@ -1,7 +1,7 @@
-package nl.cqit.function.poc.java.impl;
+package nl.cqit.function.poc.java.helloworld.impl;
 
-import nl.cqit.function.poc.java.api.HelloWorldApi;
-import nl.cqit.function.poc.java.api.model.Person;
+import nl.cqit.function.poc.java.helloworld.api.HelloWorldApi;
+import nl.cqit.function.poc.java.helloworld.api.model.Person;
 
 public class HelloWorldImpl implements HelloWorldApi {
 

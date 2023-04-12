@@ -1,8 +1,8 @@
-package nl.cqit.function.poc.java;
+package nl.cqit.function.poc.java.helloworld;
 
-import nl.cqit.function.poc.java.api.HelloWorldApi;
-import nl.cqit.function.poc.java.api.model.Person;
-import nl.cqit.function.poc.java.impl.HelloWorldImpl;
+import nl.cqit.function.poc.java.helloworld.api.HelloWorldApi;
+import nl.cqit.function.poc.java.helloworld.api.model.Person;
+import nl.cqit.function.poc.java.helloworld.impl.HelloWorldImpl;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;

@@ -1,4 +1,4 @@
-package nl.cqit.function.poc.java.controller;
+package nl.cqit.function.poc.java.helloworld.controller;
 
 import org.springframework.boot.json.JsonParseException;
 import org.springframework.http.HttpStatus;
