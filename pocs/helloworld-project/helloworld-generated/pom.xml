@@ -11,13 +11,16 @@
 
     <artifactId>helloworld-generated</artifactId>
     <packaging>pom</packaging>
+    <properties>
+        <spring-boot.version>3.0.5</spring-boot.version>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>3.0.5</version>
+                <version>${spring-boot.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
