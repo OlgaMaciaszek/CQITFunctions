@@ -11,8 +11,17 @@
 
     <artifactId>helloworld-generated</artifactId>
     <packaging>pom</packaging>
+
+    <modules>
+        <module>helloworld-app</module>
+        <module>helloworld-controller</module>
+        <module>helloworld-interface</module>
+        <module>helloworld-openapi</module>
+    </modules>
+
     <properties>
         <spring-boot.version>3.0.5</spring-boot.version>
+        <native-build-tools-plugin.version>0.9.17</native-build-tools-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -53,10 +62,16 @@
         </dependencies>
     </dependencyManagement>
 
-    <modules>
-        <module>helloworld-app</module>
-        <module>helloworld-controller</module>
-        <module>helloworld-interface</module>
-        <module>helloworld-openapi</module>
-    </modules>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.graalvm.buildtools</groupId>
+                    <artifactId>native-maven-plugin</artifactId>
+                    <version>${native-build-tools-plugin.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>
