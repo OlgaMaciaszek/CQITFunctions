@@ -2,7 +2,7 @@ package nl.cqit.function.poc.java.boxedhello.impl;
 
 import nl.cqit.function.poc.java.boxedhello.api.BoxedHelloApi;
 import nl.cqit.function.poc.java.boxedhello.api.model.Person;
-import nl.cqit.function.poc.java.helloworld.controller.HelloWorldClient;
+import nl.cqit.function.poc.java.helloworld.controller.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 public class BoxedHelloImpl implements BoxedHelloApi {
 
     @Autowired
-    private HelloWorldClient helloWorldClient;
+    private HelloWorldService helloWorldService;
 
     @Override
     public String sayHello(Person person) {
-        String greeting = helloWorldClient.sayHello(map(person));
+        String greeting = helloWorldService.sayHello(map(person));
         String horizontalEdge = "+" + "-".repeat(greeting.length() + 2) + "+";
         return horizontalEdge + "\n| " + greeting + " |\n" + horizontalEdge;
     }

@@ -2,12 +2,11 @@ package nl.cqit.function.poc.java.boxedhello;
 
 import nl.cqit.function.poc.java.boxedhello.api.model.Person;
 import nl.cqit.function.poc.java.boxedhello.impl.BoxedHelloImpl;
-import nl.cqit.function.poc.java.helloworld.controller.HelloWorldClient;
+import nl.cqit.function.poc.java.helloworld.controller.HelloWorldService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -18,7 +17,7 @@ import static org.mockito.Mockito.doReturn;
 class BoxedHelloImplTest {
 
     @Mock
-    private HelloWorldClient helloWorldClient;
+    private HelloWorldService helloWorldService;
 
     @InjectMocks
     private BoxedHelloImpl helloWorld;
@@ -30,7 +29,7 @@ class BoxedHelloImplTest {
         nl.cqit.function.poc.java.helloworld.api.model.Person mappedPerson
                 = new nl.cqit.function.poc.java.helloworld.api.model.Person("John").lastName("Doe");
         doReturn("Hello, John Doe!")
-                .when(helloWorldClient).sayHello(mappedPerson);
+                .when(helloWorldService).sayHello(mappedPerson);
 
         // execute
         String actual = helloWorld.sayHello(person);
@@ -51,7 +50,7 @@ class BoxedHelloImplTest {
         nl.cqit.function.poc.java.helloworld.api.model.Person mappedPerson
                 = new nl.cqit.function.poc.java.helloworld.api.model.Person("John");
         doReturn("Hello, John!")
-                .when(helloWorldClient).sayHello(mappedPerson);
+                .when(helloWorldService).sayHello(mappedPerson);
 
         // execute
         String actual = helloWorld.sayHello(person);
