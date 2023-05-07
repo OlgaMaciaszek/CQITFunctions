@@ -2,7 +2,7 @@ package nl.cqit.function.poc.java.boxedhello;
 
 import nl.cqit.function.poc.java.boxedhello.api.model.Person;
 import nl.cqit.function.poc.java.boxedhello.impl.BoxedHelloImpl;
-import nl.cqit.function.poc.java.helloworld.controller.HelloWorldService;
+import nl.cqit.function.poc.java.boxedhello.services.helloworld.HelloWorldService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

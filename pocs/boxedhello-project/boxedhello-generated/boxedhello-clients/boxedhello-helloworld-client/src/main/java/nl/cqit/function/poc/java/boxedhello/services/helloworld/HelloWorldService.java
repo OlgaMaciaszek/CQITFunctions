@@ -1,4 +1,4 @@
-package nl.cqit.function.poc.java.helloworld.controller;
+package nl.cqit.function.poc.java.boxedhello.services.helloworld;
 
 
 import nl.cqit.function.poc.java.helloworld.api.HelloWorldApi;

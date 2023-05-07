@@ -2,7 +2,7 @@ package nl.cqit.function.poc.java.boxedhello.impl;
 
 import nl.cqit.function.poc.java.boxedhello.api.BoxedHelloApi;
 import nl.cqit.function.poc.java.boxedhello.api.model.Person;
-import nl.cqit.function.poc.java.helloworld.controller.HelloWorldService;
+import nl.cqit.function.poc.java.boxedhello.services.helloworld.HelloWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
