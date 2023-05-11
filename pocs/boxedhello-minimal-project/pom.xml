@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>nl.cqit.function.poc.java</groupId>
+    <artifactId>boxedhello-minimal-project</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>boxedhello-minimal-app</module>
+        <module>boxedhello-minimal-interface</module>
+        <module>helloworld-minimal-interface</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <function.name>boxedhello</function.name>
+        <function.longname>Boxed Hello</function.longname>
+        <function.groupId>nl.cqit.function.poc.java</function.groupId>
+        <function.artifactId>${function.name}-function</function.artifactId>
+        <function.interfaceArtifactId>${function.name}-interface</function.interfaceArtifactId>
+        <function.apiPackage>${function.groupId}.api</function.apiPackage>
+        <function.interface>${function.apiPackage}.BoxedHello</function.interface>
+        <function.entrypoint>sayHello</function.entrypoint>
+
+        <spring-boot.version>3.0.5</spring-boot.version>
+        <native-build-tools-plugin.version>0.9.17</native-build-tools-plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2022.0.2</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <!-- OpenAPI dependencies -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>2.2.8</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openapitools</groupId>
+                <artifactId>jackson-databind-nullable</artifactId>
+                <version>0.2.6</version>
+            </dependency>
+
+            <!-- VULNERABILITY FIX -->
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>2.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.graalvm.buildtools</groupId>
+                    <artifactId>native-maven-plugin</artifactId>
+                    <version>${native-build-tools-plugin.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
