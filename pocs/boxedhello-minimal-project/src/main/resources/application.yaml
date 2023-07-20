@@ -1,7 +1,9 @@
-server:
-  port: 8090
+#server:
+#  port: 8090
 spring:
   cloud:
+    refresh:
+      enabled: false
     inetutils:
       preferred-networks:
         - 192.168
