@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.0.8</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <groupId>nl.cqit.function.poc.java</groupId>
     <artifactId>boxedhello-minimal-project</artifactId>
     <version>1.0.0-SNAPSHOT</version>
@@ -17,8 +24,6 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <function.name>boxedhello</function.name>
@@ -30,23 +35,18 @@
         <function.interface>${function.apiPackage}.BoxedHello</function.interface>
         <function.entrypoint>sayHello</function.entrypoint>
 
-        <spring-boot.version>3.0.5</spring-boot.version>
-        <native-build-tools-plugin.version>0.9.17</native-build-tools-plugin.version>
+        <java.version>19</java.version>
+        <spring-boot.version>3.0.8</spring-boot.version>
+        <spring-cloud.version>2022.0.3</spring-cloud.version>
+        <native-build-tools-plugin.version>0.9.23</native-build-tools-plugin.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2022.0.2</version>
+                <version>${spring-cloud.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
