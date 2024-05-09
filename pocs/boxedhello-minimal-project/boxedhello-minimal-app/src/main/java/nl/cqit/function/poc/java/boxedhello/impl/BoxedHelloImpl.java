@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+//@RegisterReflectionForBinding(nl.cqit.function.poc.java.helloworld.api.model.Person.class)
 public class BoxedHelloImpl implements BoxedHelloApi {
 
     @Autowired
@@ -18,7 +19,6 @@ public class BoxedHelloImpl implements BoxedHelloApi {
         String horizontalEdge = "+" + "-".repeat(greeting.length() + 2) + "+";
         return horizontalEdge + "\n| " + greeting + " |\n" + horizontalEdge;
     }
-
     private nl.cqit.function.poc.java.helloworld.api.model.Person map(Person person) {
         return new nl.cqit.function.poc.java.helloworld.api.model
                 .Person(person.getFirstName())

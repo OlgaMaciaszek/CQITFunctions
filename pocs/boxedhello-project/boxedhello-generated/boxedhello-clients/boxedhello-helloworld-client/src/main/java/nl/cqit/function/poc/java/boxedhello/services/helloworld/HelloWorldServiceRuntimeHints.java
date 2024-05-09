@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ImportRuntimeHints;
 import org.springframework.core.DecoratingProxy;
 
 @Configuration
-@ImportRuntimeHints(HelloWorldServiceRuntimeHints.HelloWorldServiceRegistrar.class)
+//@ImportRuntimeHints(HelloWorldServiceRuntimeHints.HelloWorldServiceRegistrar.class)
 public class HelloWorldServiceRuntimeHints {
 
     static class HelloWorldServiceRegistrar implements RuntimeHintsRegistrar {

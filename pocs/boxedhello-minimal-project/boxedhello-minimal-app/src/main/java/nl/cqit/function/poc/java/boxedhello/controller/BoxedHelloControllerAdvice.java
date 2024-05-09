@@ -1,6 +1,9 @@
 package nl.cqit.function.poc.java.boxedhello.controller;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.boot.json.JsonParseException;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
@@ -10,14 +13,21 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.net.URI;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 @ControllerAdvice
 public class BoxedHelloControllerAdvice extends ResponseEntityExceptionHandler {
 
+    private static final Log LOG = LogFactory.getLog(BoxedHelloControllerAdvice.class);
+
     @ExceptionHandler(RuntimeException.class)
     public ProblemDetail handleRuntimeException(RuntimeException ex, WebRequest request) {
+
+        LOG.error(ex.getMessage(), ex);
+        LOG.debug("Request: " + request + "Content-Type: " + Arrays.toString(request.getHeaderValues(HttpHeaders.CONTENT_TYPE))
+                + "Accept: " + Arrays.toString(request.getHeaderValues(HttpHeaders.ACCEPT)));
 
         if (ex instanceof JsonParseException) {
             ProblemDetail body = getExceptionProblemDetail(
